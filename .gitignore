@@ -4,3 +4,8 @@
 
 /obj/Release/net6.0
 /.vs
+/obj/Debug/net6.0/apphost.exe
+/obj/Debug/net6.0/demoapp.AssemblyInfo.cs
+/obj/Debug/net6.0/demoapp.AssemblyInfoInputs.cache
+/obj/Debug/net6.0/demoapp.assets.cache
+/obj/Debug/net6.0/demoapp.GeneratedMSBuildEditorConfig.editorconfig
