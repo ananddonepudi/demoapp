@@ -3,7 +3,7 @@ Description=.NET Dice Roll Web API
 
 [Service]
 WorkingDirectory=/var/www/
-ExecStart=/usr/bin/dotnet/var/www/demoapp.dll
+ExecStart=/usr/bin/dotnet /var/www/demoapp.dll --urls "http://localhost:5000"
 Restart=always
 # Restart service after 10 seconds when dotnet service crashes:
 RestartSec=10
