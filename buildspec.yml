@@ -7,8 +7,7 @@ phases:
   pre_build:
     commands:
       - echo Restore started on the 'date'
-      - dotnet restore demoapp.csproj
-     
+      - dotnet restore demoapp.csproj     
   build:
     commands:
       - dotnet build demoapp.csproj
