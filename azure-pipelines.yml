@@ -38,6 +38,7 @@ stages:
         echo Building in $(buildConfiguration) mode
         echo jobvariable $(jobVariable)
         echo $(clientid)
+        echo Build sample
      - script:
         echo Predefined variables print
         echo "Building on branch $(Build.SourceBranch)"
