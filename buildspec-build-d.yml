@@ -10,14 +10,14 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t 344249396000.dkr.ecr.ap-south-1.amazonaws.com/chrepo:latest .
-      - docker tag 344249396000.dkr.ecr.ap-south-1.amazonaws.com/chrepo:latest 344249396000.dkr.ecr.ap-south-1.amazonaws.com/chrepo:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker build -t 344249396000.dkr.ecr.ap-south-1.amazonaws.com/vinrepo:latest .
+      - docker tag 344249396000.dkr.ecr.ap-south-1.amazonaws.com/vinrepo:latest 344249396000.dkr.ecr.ap-south-1.amazonaws.com/vinrepo:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push 344249396000.dkr.ecr.ap-south-1.amazonaws.com/chrepo:latest
-      - docker push 344249396000.dkr.ecr.ap-south-1.amazonaws.com/chrepo:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker push 344249396000.dkr.ecr.ap-south-1.amazonaws.com/vinrepo:latest
+     
 
 artifacts:
   files:
