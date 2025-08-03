@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+  build:
+    commands:
+      - echo Build started on `date`
+      - docker build -t my-ecr-repo:$IMAGE_TAG .
+      - docker tag my-ecr-repo:$IMAGE_TAG $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/my-ecr-repo:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Pushing the Docker image...
+      - docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/my-ecr-repo:$IMAGE_TAG
+      - echo Writing image definition...
+      - |
+        sed "s|<IMAGE_URI>|$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/my-ecr-repo:$IMAGE_TAG|" kubernetes/deployment.yaml > kubernetes/deployment-patched.yaml
+      - aws eks update-kubeconfig --region $AWS_REGION --name myEKScluster
+      - kubectl apply -f kubernetes/deployment-patched.yaml
+      - kubectl apply -f kubernetes/service.yaml
+
+artifacts:
+  files:
+    - kubernetes/deployment-patched.yaml
