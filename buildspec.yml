@@ -6,10 +6,13 @@ phases:
       dotnet: 8.0
   pre_build:
     commands:
+      - echo Before restore
       - echo Restore started on the 'date'
       - dotnet restore demoapp.csproj     
   build:
     commands:
+      - echo 'build started'
+      - echo Start date on the 'date'
       - dotnet build demoapp.csproj
       - dotnet publish -c release -o ./build_output  demoapp.csproj      
       
