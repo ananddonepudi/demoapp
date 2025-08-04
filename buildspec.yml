@@ -10,6 +10,7 @@ phases:
       - dotnet restore demoapp.csproj     
   build:
     commands:
+      - echo Start date on the 'date'
       - dotnet build demoapp.csproj
       - dotnet publish -c release -o ./build_output  demoapp.csproj      
       
