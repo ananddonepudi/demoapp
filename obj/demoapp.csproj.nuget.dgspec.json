@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Anand\\demorepo\\demoapp.csproj": {}
+    "C:\\Anand\\Learning\\Learning\\Learnings\\Devops\\GIT\\demoapp\\demoapp.csproj": {}
   },
   "projects": {
-    "C:\\Anand\\demorepo\\demoapp.csproj": {
+    "C:\\Anand\\Learning\\Learning\\Learnings\\Devops\\GIT\\demoapp\\demoapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Anand\\demorepo\\demoapp.csproj",
+        "projectUniqueName": "C:\\Anand\\Learning\\Learning\\Learnings\\Devops\\GIT\\demoapp\\demoapp.csproj",
         "projectName": "demoapp",
-        "projectPath": "C:\\Anand\\demorepo\\demoapp.csproj",
+        "projectPath": "C:\\Anand\\Learning\\Learning\\Learnings\\Devops\\GIT\\demoapp\\demoapp.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Anand\\demorepo\\obj\\",
+        "outputPath": "C:\\Anand\\Learning\\Learning\\Learnings\\Devops\\GIT\\demoapp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -44,11 +44,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -68,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
