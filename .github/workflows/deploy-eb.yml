@@ -1,0 +1,56 @@
+name: Build and Deploy .NET to AWS Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Publish
+      run: dotnet publish -c Release -o publish
+
+    - name: Create deployment package
+      run: |
+        Compress-Archive -Path publish\* -DestinationPath app.zip
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Upload to S3
+      run: |
+        aws s3 cp app.zip s3://${{ secrets.S3_BUCKET }}/app-${{ github.run_number }}.zip
+
+    - name: Create Elastic Beanstalk application version
+      run: |
+        aws elasticbeanstalk create-application-version `
+          --application-name "${{ secrets.EB_APPLICATION_NAME }}" `
+          --version-label "v-${{ github.run_number }}" `
+          --source-bundle S3Bucket="${{ secrets.S3_BUCKET }}",S3Key="app-${{ github.run_number }}.zip"
+
+    - name: Deploy to Elastic Beanstalk
+      run: |
+        aws elasticbeanstalk update-environment `
+          --environment-name "${{ secrets.EB_ENVIRONMENT_NAME }}" `
+          --version-label "v-${{ github.run_number }}"
