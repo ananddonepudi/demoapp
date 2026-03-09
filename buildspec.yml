@@ -16,7 +16,7 @@ phases:
       - echo 'build started'
       - echo Start date on the 'date'
       - dotnet build demoapp.csproj
-      - dotnetpublish -c release -o ./build_output  demoapp.csproj      
+      - dotnet publish -c Release -o ./build_output demoapp.csproj    
       
 artifacts:
   files:
