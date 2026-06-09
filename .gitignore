@@ -13,3 +13,5 @@
 /Properties/PublishProfiles
 /demoapp.csproj.user
 /obj
+/.github/copilot-instructions.md
+/.gitignore
