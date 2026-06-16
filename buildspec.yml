@@ -8,8 +8,8 @@ phases:
     commands:
                 - echo Before restore
                 - echo Restore started on the 'date'
-                - echo 'hello Good morning'
-                
+                - dotnet nuget locals all --clear
+                - rm -rf obj bin                
                 - dotnet restore demoapp.csproj     
   build:
     commands:
