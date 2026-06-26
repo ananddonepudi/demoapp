@@ -10,7 +10,6 @@ phases:
                 - echo Restore started on the 'date'
                 - dotnet nuget locals all --clear
                 - rm -rf obj bin                
-                - echo "test"
                 - dotnet restore demoapp.csproj     
   build:
     commands:

@@ -9,7 +9,9 @@
 /obj/Debug/net6.0/demoapp.AssemblyInfoInputs.cache
 /obj/Debug/net6.0/demoapp.assets.cache
 /obj/Debug/net6.0/demoapp.GeneratedMSBuildEditorConfig.editorconfig
-/bin/Release/net8.0
-/obj
+/bin
 /Properties/PublishProfiles
 /demoapp.csproj.user
+/obj
+/.github/copilot-instructions.md
+/.gitignore

@@ -1,7 +1,7 @@
 # ASP.NET Core (.NET Framework)
 # Build and test ASP.NET Core projects targeting the full .NET Framework.
 # Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core.
 
 trigger:
 - main
@@ -38,6 +38,7 @@ stages:
         echo Building in $(buildConfiguration) mode
         echo jobvariable $(jobVariable)
         echo $(clientid)
+        echo Build sample
      - script:
         echo Predefined variables print
         echo "Building on branch $(Build.SourceBranch)"

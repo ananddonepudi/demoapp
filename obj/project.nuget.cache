@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "IahBRg/qGwk=",
+=======
+  "dgSpecHash": "UuJUKAV7Yi0=",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Anand\\demorepo\\demoapp.csproj",
   "expectedPackageFiles": [],

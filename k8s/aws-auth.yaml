@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::344249396000:role/eksctl-myEKScluster-nodegroup-my-n-NodeInstanceRole-nUbfNQpwzK4C
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
+
+  mapUsers: |
+    - userarn: arn:aws:iam::344249396000:user/devopsuser
+      username: devopsuser
+      groups:
+        - system:masters
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2026-01-29T07:18:44Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "1108"
+  uid: 02d0526c-8e08-44eb-b528-e45f4f867e9a
