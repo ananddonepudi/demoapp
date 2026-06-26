@@ -6,15 +6,22 @@ phases:
       dotnet: 8.0
   pre_build:
     commands:
-      - echo Restore started on 'date'
-      - echo "test "
-      - dotnet restore demoapp.csproj
-     
+                - echo Before restore
+                - echo Restore started on the 'date'
+                - dotnet nuget locals all --clear
+                - rm -rf obj bin                
+                - echo "test"
+                - dotnet restore demoapp.csproj     
   build:
     commands:
+      - echo 'build started'
+      - echo Start date on the 'date'
       - dotnet build demoapp.csproj
-      - dotnet publish -c release -o ./build_output  demoapp.csproj
       
+  post_build:
+     commands:
+       - dotnet publish -c Release -o ./build_output demoapp.csproj   
+       -  echo 'publish in post build completed'
       
 artifacts:
   files:
