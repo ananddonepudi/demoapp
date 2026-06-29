@@ -6,7 +6,7 @@ phases:
       dotnet: 8.0
   pre_build:
     commands:
-                - echo Before restore
+                - echo Before restore stage new
                 - echo Restore started on the 'date'
                 - dotnet nuget locals all --clear
                 - rm -rf obj bin                

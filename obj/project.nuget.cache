@@ -1,12 +1,16 @@
 {
   "version": 2,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "dgSpecHash": "IahBRg/qGwk=",
 =======
   "dgSpecHash": "UuJUKAV7Yi0=",
 >>>>>>> Stashed changes
+=======
+  "dgSpecHash": "s4RrQXq6Qhg=",
+>>>>>>> Stashed changes
   "success": true,
-  "projectFilePath": "C:\\Anand\\demorepo\\demoapp.csproj",
+  "projectFilePath": "C:\\Anand\\Learning\\Learning\\Learnings\\Devops\\GIT\\demoapp\\demoapp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
